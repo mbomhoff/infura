@@ -107,3 +107,11 @@ class Client():
         r = self.__req()
 
         return r['result']
+
+    def eth_get_transaction_receipt(self, tx_hash):
+        self._payload['method'] = 'eth_getTransactionReceipt'
+        self._params = [tx_hash]
+
+        r = self.__req()
+
+        return r['result']
