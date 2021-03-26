@@ -115,3 +115,11 @@ class Client():
         r = self.__req()
 
         return r['result']
+
+    def eth_call(self, fromAddr, toAddr, gas, gasPrice, value, data):
+        self._payload['method'] = 'eth_call'
+        self._params = [fromAddr, toAddr, hex(gas), hex(gasPrice), hex(value), data]
+
+        r = self.__req()
+
+        return r['result']
