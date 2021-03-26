@@ -123,3 +123,11 @@ class Client():
         r = self.__req()
 
         return r['result']
+
+    def eth_call_erc20(self, to, data):
+        self._payload['method'] = 'eth_call'
+        self._params = [to, data]
+
+        r = self.__req()
+
+        return r['result']
