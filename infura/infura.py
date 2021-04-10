@@ -116,11 +116,21 @@ class Client():
 
         return r['result']
 
+    def eth_get_code(self, addr, block):
+        self._payload['method'] = 'eth_getCode'
+        self._params = [addr, hex(block)]
+
+        r = self.__req()
+        print(r)
+
+        return r['result']
+
     def eth_call(self, fromAddr, toAddr, gas, gasPrice, value, data):
         self._payload['method'] = 'eth_call'
         self._params = [fromAddr, toAddr, hex(gas), hex(gasPrice), hex(value), data]
 
         r = self.__req()
+        print(r)
 
         return r['result']
 
@@ -129,5 +139,6 @@ class Client():
         self._params = [to, data]
 
         r = self.__req()
+        print(r)
 
         return r['result']
