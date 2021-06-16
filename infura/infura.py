@@ -15,7 +15,7 @@ class Client():
                  ):
 
         # verify network
-        if network not in ['mainnet', 'ropsten', 'kovan', 'rinkeby']:
+        if network not in ['mainnet', 'ropsten', 'kovan', 'rinkeby', 'polygon-mainnet']:
             raise Exception('network could only be mainnet/ropsten/kovan/rinkeby')
 
         # id/secret
